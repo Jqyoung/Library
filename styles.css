@@ -1,0 +1,273 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(233, 240, 234);
+  padding-top: 45px;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: rgb(66, 204, 158);
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header > h2 {
+  font-size: 1rem;
+  color: grey;
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  justify-items: center;
+  align-items: center;
+  flex: 1;
+}
+
+button {
+  cursor: pointer;
+}
+
+#addNew {
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 15px;
+  border-style: none;
+  color: white;
+  background-image: linear-gradient(to right, aquamarine, lightgreen);
+}
+
+#addNew:hover {
+  background-image: linear-gradient(to right, rgb(91, 204, 212), rgb(108, 213, 164));
+}
+
+table {
+  width: 60%;
+  border-collapse: collapse;
+  border-bottom: 1px solid lightgray;
+  align-self: start;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgb(95, 107, 103);
+  border-bottom: 1px solid lightgray;
+  text-align: left;
+}
+
+tr {
+  border-bottom: 1px solid lightgray;
+  font-weight: 200;
+}
+
+td,
+th {
+  padding: 20px 0;
+}
+
+tr button {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  padding: 8px 16px;
+}
+
+tr > td:nth-child(4) > button:hover,
+form button[type='submit']:hover {
+  border: 1px solid aquamarine;
+}
+
+tr > td:nth-child(5) > button:hover,
+form button[type='reset']:hover {
+  border: 1px solid red;
+}
+
+.col4 {
+  width: 185px;
+}
+.col5 {
+  width: 92px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  visibility: hidden;
+  align-self: start;
+  background-color: #d0e8dc;
+  padding: 30px;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  color: grey;
+
+  width: 17em;
+  height: 19em;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+form input {
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  padding: 0 10px;
+}
+
+form input:focus {
+  outline: 1px lightgray solid;
+  background-color: rgb(246, 252, 250);
+}
+
+form input[type='radio'] {
+  display: grid;
+  place-content: center;
+
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+form input[type='radio']:checked {
+  outline: rgb(116, 234, 255) solid 1px;
+}
+
+form input[type='radio']::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  box-shadow: inset 1em 1em rgb(116, 234, 255);
+  transform: scale(0);
+  transition: 100ms transform ease-in-out;
+}
+
+form input[type='radio']:checked::before {
+  transform: scale(1);
+}
+
+form > div:not(.buttons) {
+  display: flex;
+  flex-direction: column;
+}
+
+form .buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+}
+
+form button:not(.cancel) {
+  padding: 5px 16px;
+  border-radius: 10px;
+  border: 1px gray solid;
+  font-size: 1.3rem;
+  color: rgb(77, 86, 81);
+}
+
+form button[class='cancel'] {
+  border: none;
+  padding: 5px 10px;
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: rgb(53, 61, 57);
+}
+
+form label,
+legend {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+fieldset {
+  border: 0;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+  gap: 5px;
+}
+
+fieldset > legend {
+  font-size: 1.2rem;
+}
+
+fieldset > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: gray;
+}
+
+.footer p:hover {
+  color: rgb(107, 192, 164);
+}
+
+.footer img {
+  width: 30px;
+  filter: brightness(0.5);
+}
+.footer img:hover {
+  cursor: pointer;
+  filter: sepia(1) hue-rotate(70deg) saturate(6) brightness(0.8);
+  transform: scale(1.2);
+}

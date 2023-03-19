@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/5ebc483ac2.js" crossorigin="anonymous"></script>
+    <script src="./script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>My Library</h1>
+      <h2>Add books that you have read or are interested to read into the database.</h2>
+    </div>
+
+    <div class="container">
+      <button id="addNew">ADD NEW BOOK</button>
+
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col class="col4" />
+          <col class="col5" />
+        </colgroup>
+        <thead>
+          <tr class="title">
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="backdrop">
+        <form>
+          <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required />
+          </div>
+          <div>
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" required />
+          </div>
+          <div>
+            <label for="numPages">Number of Pages</label>
+            <input type="number" id="numPages" name="numPages" min="1" required />
+          </div>
+          <fieldset>
+            <legend>Have you read this book?</legend>
+            <div>
+              <label for="read">Yes</label>
+              <input type="radio" id="read" name="read" value="Read" required />
+            </div>
+            <div>
+              <label for="read">No</label>
+              <input type="radio" id="read" name="read" value="Not Read" />
+            </div>
+          </fieldset>
+          <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button class="cancel"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="https://github.com/Jqyoung">
+        <p>By Joey Young</p>
+      </a>
+      <a href="https://github.com/Jqyoung/Library">
+        <img src="./img/GitHub-Mark-Light-120px-plus.png" alt="Github" />
+      </a>
+    </div>
+  </body>
+</html>
