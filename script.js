@@ -1,7 +1,7 @@
 const myLibrary = [];
 const backdrop = document.querySelector('.backdrop');
 
-const defaultBook = new Book('Harry Potter', 'JK Rowling', '133', 'Read');
+const defaultBook = new Book('Harry Potter', 'JK Rowling', '336', 'Read');
 myLibrary.push(defaultBook);
 
 const addNew = document.getElementById('addNew');
