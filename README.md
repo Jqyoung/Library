@@ -8,5 +8,6 @@ A Library app created as part of [The Odin Project's curriculum](https://www.the
 
 - Using Object constructors and prototypes to create object.
 - Using Objects and functions to make code more efficient and easier to read.
+- Creating a popup form which overlays on top of the other elements when activated.
 - Styling the radio button on a form with CSS.
 - Creating a dynamic table with html table element and javascript.
