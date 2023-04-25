@@ -1,9 +1,6 @@
 const myLibrary = [];
 const backdrop = document.querySelector('.backdrop');
 
-const defaultBook = new Book('Harry Potter', 'JK Rowling', '336', 'Read');
-myLibrary.push(defaultBook);
-
 const addNew = document.getElementById('addNew');
 addNew.addEventListener('click', popUpForm);
 
@@ -16,16 +13,21 @@ cancel.addEventListener('click', () => {
   closeForm();
 });
 
-function Book(title, author, numPages, read) {
-  this.title = title;
-  this.author = author;
-  this.numPages = numPages;
-  this.read = read;
+class Book {
+  constructor(title, author, numPages, read) {
+    this.title = title;
+    this.author = author;
+    this.numPages = numPages;
+    this.read = read;
+  }
+
+  info() {
+    return `${this.title} by ${this.author}, ${this.numPages} pages, ${this.read}`;
+  }
 }
 
-Book.prototype.info = function info() {
-  return `${this.title} by ${this.author}, ${this.numPages} pages, ${this.read}`;
-};
+const defaultBook = new Book('Harry Potter', 'JK Rowling', '336', 'Read');
+myLibrary.push(defaultBook);
 
 displayBooks(myLibrary);
 
