@@ -5,7 +5,47 @@ const addNew = document.getElementById('addNew');
 addNew.addEventListener('click', popUpForm);
 
 const form = document.querySelector('form');
-form.addEventListener('submit', addBookToLibrary);
+form.addEventListener('submit', (e) => {
+  addBookToLibrary(e);
+});
+
+const formControls = document.querySelectorAll('form input');
+formControls.forEach((control) => {
+  control.addEventListener('input', () => {
+    inputValidity(formControls);
+  });
+});
+
+const submitButton = document.querySelector('button[type="submit"');
+submitButton.addEventListener('click', () => {
+  inputValidity(formControls);
+});
+
+// js input validation
+function inputValidity(formElements) {
+  formElements.forEach((element, i) => {
+    if (element.validity.valueMissing) {
+      switch (i) {
+        case 0:
+          element.setCustomValidity('DO NOT LEAVE THE TITLE EMPTY!');
+          break;
+        case 1:
+          element.setCustomValidity('FILL IN THE AUTHOR!');
+          break;
+        case 2:
+          element.setCustomValidity('ADD PAGE NUMBERS!');
+          break;
+        case 3:
+          element.setCustomValidity('TELL ME IF YOU HAVE READ IT OR NOT!');
+          break;
+        default:
+          element.setCustomValidity('Fill in the data');
+      }
+    } else {
+      element.setCustomValidity('');
+    }
+  });
+}
 
 const cancel = document.querySelector('.cancel');
 cancel.addEventListener('click', () => {
@@ -43,6 +83,7 @@ function closeForm() {
 
 function addBookToLibrary(event) {
   event.preventDefault();
+
   const title = form.elements.title.value;
   const author = form.elements.author.value;
   const numPages = form.elements.numPages.value;
